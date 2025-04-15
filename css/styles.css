@@ -154,6 +154,10 @@ nav a:hover {
         padding: 10px;
     }
 
+    .container-main h1{
+        display: none;
+    }
+
     .logo {
         margin-bottom: 10px;
     }
