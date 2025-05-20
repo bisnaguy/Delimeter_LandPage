@@ -1,14 +1,14 @@
 <?php
-    $banco = new PDO('sqlite:database/banco_dados.db');
+    $banco = new PDO('sqlite:database/database.db');
 
-    $name = $_POST['name'];
+    $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha =password_hash($_POST['senha'],PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO usuario (nm_usuario, email_usuario, senha_usuario) VALUES (:name, :email, :senha)";
+    $sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario) VALUES (:nome, :email, :senha)";
     $stmt=$banco->prepare($sql);
     $stmt->execute([
-        ':name'=>$name,
+        ':nome'=>$nome,
         ':email'=>$email,
         ':senha'=>$senha
     ]);
