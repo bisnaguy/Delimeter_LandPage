@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deliméter - Priorize sua Alimentação</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="javascript/script.js"></script>
-</head>
-
-<body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><img src="images/logo.png" alt="Logo Delímiter"></a>
-        </div>
-
-        <div class="menu-hamburguer">
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">
-                <div class="linha"></div>
-                <div class="linha"></div>
-                <div class="linha"></div>
-            </label>
-            <div class="overlay">
-                <nav>
-                    <ul>
-                        <li><a href="about.html" class="link">Sobre Nós</a></li>
-                        <li><a href="calculo_landpage.html" class="link">Cálculo nutricional</a></li>
-                        <li><a href="#" class="link">Cadastrar-se</a></li>
-                        <li><a href="#" class="link">Login</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        
-    </header>
+<?php include 'header.php'; ?>
     <main>
         <section class="container-main">
             <div class="container-main-image">
@@ -84,20 +48,4 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="social">
-            <a href="https://www.instagram.com/delim3ter/"><img src="images/instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="images/whatsapp.png" alt="WhatsApp"></a>
-            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-        </div>
-        <div class="links">
-            <a href="#">Política de Privacidade</a> |
-            <a href="#">Contato</a> |
-            <a href="#">Termos de uso</a>
-        </div>
-        <p>&copy; 2024 - Delímiter LTDA - Todos os direitos reservados.</p>
-    </footer>
-
-</body>
-
-</html>
+<?php include 'footer.php'; ?>

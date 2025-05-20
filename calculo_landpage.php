@@ -1,40 +1,4 @@
-<!doctype html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cálculo</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-  <header>
-    <div class="logo">
-        <a href="index.html"><img src="images/logo.png" alt="Logo Delímiter"></a>
-    </div>
-
-    <div class="menu-hamburguer">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">
-            <div class="linha"></div>
-            <div class="linha"></div>
-            <div class="linha"></div>
-        </label>
-        <div class="overlay">
-            <nav>
-                <ul>
-                    <li><a href="about.html" class="link">Sobre Nós</a></li>
-                    <li><a href="calculo_landpage.html" class="link">Cálculo nutricional</a></li>
-                    <li><a href="#" class="link">Cadastrar-se</a></li>
-                    <li><a href="#" class="link">Login</a></li>
-<!--                     <li><a href="#images/pix.jpg">Nos ajude doando nessa chave pix<img src="images/pix.jpg" alt="chave pix"></a></li> -->
-                  </ul>
-            </nav>
-        </div>
-    </div>
-    
-</header>
+<?php include 'header.php'; ?>
   <main>
     <section class="container-main">
       <div class="container-main-image">
@@ -83,26 +47,6 @@
         </form>
       </div>
       <div class="container" id="resultado"></div>
-      
     </div>
-    
-    <footer>
-      <div class="social">
-        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="images/whatsapp.png" alt="WhatsApp"></a>
-        <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-      </div>
-      <div class="links">
-        <a href="#">Política de Privacidade</a> |
-        <a href="#">Contato</a> |
-        <a href="#">Termos de uso</a>
-      </div>
-      <p>&copy; 2024 - Delímiter LTDA - Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Scripts -->
-    
-    <script src="javascript/script.js"></script>
-</body>
-
-</html>
+  </main>
+<?php include 'footer.php'; ?>
