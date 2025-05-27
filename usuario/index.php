@@ -2,8 +2,8 @@
 <main>
 <?php
 session_start();
-if (!isset($_SESSION['username'])) {
-    header('Location: ../cadastrar_usuario.php');
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../entrar_usuario.php');
     exit();
 }
 ?>
