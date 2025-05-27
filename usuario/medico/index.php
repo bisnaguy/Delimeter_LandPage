@@ -1,20 +1,19 @@
 <?php include 'header.php'; ?>
-<main>
-    <div class="container-calc">
-        <form action="user_tipo.php" method="POST" id="formulario">
-            <div class="container">
-                <h1>Entrar como:</h1>
-                <div class="form-group">
-                    <label for="tipo_usuario">Nome:</label>
-                    <select>
-                        <option value="paciente">Paciente</option>
-                        <option value="nutricionista">Nutricionista</option>
-                        <option value="medico">Médico</option>
-                    </select>
-                </div>
-                <button value="submit" onclick="if (validarFormulario()) enviarDados();">Entrar</button>
+    <main>
+        <section class="container-main">
+            <div class="container-main-image">
+                <img src="images/almoço.jpg" alt="Pessoas em uma mesa distribuindo refeições">
             </div>
-        </form>
-    </div>
-</main>
+        </section>
+        <section class="about">
+            <h1>Sobre</h1>
+            <div class="caixas">
+                <div class="caixa">
+                    <p>O <span>Deliméter</span> é um projeto integrador voltado à nutrição de pessoas carentes, unindo tecnologia e alimentação saudável para combater a insegurança alimentar. Ele visa oferecer soluções inovadoras para facilitar o acesso a alimentos nutritivos, promover educação alimentar e otimizar a distribuição de recursos para comunidades em situação de vulnerabilidade. O projeto utiliza ferramentas tecnológicas para coleta e análise de dados, permitindo um planejamento eficiente e um impacto positivo na qualidade de vida dos beneficiados.</p>
+                    <p>O nome <span>Deliméter</span> é inspirado na deusa <span>Deméter</span>, conhecida como a deusa da agricultura na mitologia grega. A parte "Deli" do nome faz referência a <span>delimitação</span>, que é o principal objetivo deste site: delimitar e acompanhar a sua alimentação.</p>
+                </div>
+                <img src="images/delimeter.png" alt="Deusa delimeter" style="height: 50%;">
+            </div>
+        </section>
+    </main>
 <?php include 'footer.php'; ?>

@@ -7,6 +7,6 @@ if($tipo_usuario == 'paciente') {
 } elseif($tipo_usuario == 'medico') {
     header('Location: medico/index.php');
 } else {
-    echo "Tipo de usuário inválido.";
+    echo "$tipo_usuario";
 }
 ?>

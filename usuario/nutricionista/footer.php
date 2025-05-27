@@ -1,8 +1,8 @@
     <footer>
         <div class="social">
-            <a href="https://www.instagram.com/delim3ter/"><img src="../images/instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="../images/whatsapp.png" alt="WhatsApp"></a>
-            <a href="#"><img src="../images/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/delim3ter/"><img src="../../images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../../images/whatsapp.png" alt="WhatsApp"></a>
+            <a href="#"><img src="../../images/linkedin.png" alt="LinkedIn"></a>
         </div>
         <div class="links">
             <a href="#">Política de Privacidade</a> |
