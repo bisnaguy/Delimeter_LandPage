@@ -1,4 +1,5 @@
 <?php
+    session_start(); // Adicione esta linha!
     $banco = new PDO('sqlite:database/database.db');
     $email = $_POST['email'];
     $senha = $_POST['senha'];
