@@ -1,4 +1,11 @@
 <?php include 'header.php'; ?>
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('Location: ../login.php');
+    exit();
+}
+?>
     <main>
         <section class="container-main">
             <div class="container-main-image">
