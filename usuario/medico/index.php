@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </section>
         <section class="about">
-            <h1>Sobre</h1>
+            <h1>Bem-Vindo ao Deliméter para Médicos</h1>
             <div class="caixas">
                 <div class="caixa">
                     <p>O <span>Deliméter</span> é um projeto integrador voltado à nutrição de pessoas carentes, unindo tecnologia e alimentação saudável para combater a insegurança alimentar. Ele visa oferecer soluções inovadoras para facilitar o acesso a alimentos nutritivos, promover educação alimentar e otimizar a distribuição de recursos para comunidades em situação de vulnerabilidade. O projeto utiliza ferramentas tecnológicas para coleta e análise de dados, permitindo um planejamento eficiente e um impacto positivo na qualidade de vida dos beneficiados.</p>
