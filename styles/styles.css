@@ -1,7 +1,7 @@
 /* Reset e estilos gerais */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #9aff91;
     color: #333;
     margin: 0;
 }
@@ -352,6 +352,7 @@ img {
     padding: 10px 10px 50px 10px;
     background-color: #26a65b;
     margin-top: 0;
+    margin-bottom: 80px;
 }
 
 
@@ -377,6 +378,7 @@ img {
     box-shadow: 0px 2px 10px rgb(0, 0, 0);
     padding: 20px;
     box-sizing: border-box;
+    margin-bottom: 100px;
 }
 
 .container h1{
@@ -428,14 +430,20 @@ button {
 
 /* Rodapé responsivo */
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; /* Mantém os elementos espaçados */
     align-items: center;
     background-color: #333;
     color: #9bea9b;
     text-align: center;
-    padding: 10px;
+    padding: 10px 20px; /* Aumentei o padding horizontal para melhor espaçamento */
+    z-index: 100; /* Evita que o footer fique atrás de outros elementos */
+    gap: 15px; /* Espaço entre os itens (opcional) */
 }
 
 footer .social img {
@@ -458,4 +466,4 @@ footer p {
     object-fit:contain; /* Garante que a imagem preencha o espaço sem distorcer */
     border-radius: 8px; /* Opcional: Adiciona bordas arredondadas */
     margin: 10px; /* Espaçamento entre as imagens */
-}
+    }
