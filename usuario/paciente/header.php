@@ -25,7 +25,7 @@
                     <ul>
                         <li><a href="../../about.php" class="link">Sobre Nós</a></li>
                         <li><a href="../../calculo_landpage.php" class="link">Cálculo nutricional</a></li>
-                        <li><a href="../conta.php" class="link">Conta</a></li>
+                        <li><a href="conta.php" class="link">Conta</a></li>
                         <li><a href="../sair_usuario.php" class="link">Sair</a></li>
                     </ul>
                 </nav>

@@ -6,8 +6,8 @@ $db = new SQLite3('database.db');
 // Define a estrutura da tabela
 $sql = "CREATE TABLE usuario (
     id_usuario INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome TEXT NOT NULL,
-    email TEXT UNIQUE,
+    nome_usuario TEXT NOT NULL,
+    email_usuario TEXT UNIQUE,
     senha_usuario TEXT NOT NULL
 );
 CREATE TABLE endereco_usuario (
