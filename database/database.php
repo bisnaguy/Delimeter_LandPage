@@ -160,7 +160,6 @@ CREATE TABLE valida_dados_antropometricos (
     FOREIGN KEY (id_medida) REFERENCES dados_antropometricos(id_medida),
     FOREIGN KEY (id_medico) REFERENCES medico(id_medico)
 );
-
 CREATE TABLE valida_diario (
     id_nutricionista INTEGER,
     id_diario INTEGER,
@@ -168,7 +167,6 @@ CREATE TABLE valida_diario (
     FOREIGN KEY (id_nutricionista) REFERENCES nutricionista(id_nutricionista),
     FOREIGN KEY (id_diario) REFERENCES diario_de_alimentos(id_diario)
 );
-
 CREATE TABLE relacao_paciente_consulta (
     id_consulta INTEGER,
     id_paciente INTEGER,
@@ -176,7 +174,6 @@ CREATE TABLE relacao_paciente_consulta (
     FOREIGN KEY (id_consulta) REFERENCES consulta(id_consulta),
     FOREIGN KEY (id_paciente) REFERENCES paciente(id_paciente)
 );
-
 CREATE TABLE relacao_consulta_nutricionista (
     id_consulta INTEGER,
     id_nutricionista INTEGER,
@@ -184,7 +181,6 @@ CREATE TABLE relacao_consulta_nutricionista (
     FOREIGN KEY (id_consulta) REFERENCES consulta(id_consulta),
     FOREIGN KEY (id_nutricionista) REFERENCES nutricionista(id_nutricionista)
 );
-
 CREATE TABLE relacao_consulta_medico (
     id_consulta INTEGER,
     id_medico INTEGER,
