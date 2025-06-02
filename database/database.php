@@ -1,25 +1,57 @@
 <?php
+// Configurações de erro
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// Conecta-se ao banco de dados
-$db = new SQLite3('database.db');
+// Caminhos absolutos
+define('DB_DIR', __DIR__ . '/database');
+define('DB_FILE', DB_DIR . '/database.db');
 
-// Define a estrutura da tabela
-$sql = "CREATE TABLE usuario (
-    id_usuario INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome_usuario TEXT,
-    email_usuario TEXT UNIQUE,
-    senha_usuario TEXT
-);";
+try {
+    // Verifica/Cria o diretório
+    if (!file_exists(DB_DIR)) {
+        if (!mkdir(DB_DIR, 0755, true)) {
+            throw new Exception("Falha ao criar diretório do banco de dados");
+        }
+    }
 
-// Executa a consulta para criar a tabela
-$result = $db->exec($sql);
+    // Conecta ao banco (cria se não existir)
+    $db = new SQLite3(DB_FILE);
+    
+    if (!$db) {
+        throw new Exception("Falha ao conectar/criar o banco de dados");
+    }
 
-// Verifica se a consulta foi executada com sucesso
-if ($result) {
-    echo "Tabela 'usuarios' criada com sucesso!\n";
-} else {
-    echo "Erro ao criar a tabela: " . $db->lastErrorMsg() . "\n";
+    // Criação da tabela com verificações
+    $sql = "CREATE TABLE IF NOT EXISTS usuario (
+        id_usuario INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome_usuario TEXT NOT NULL,
+        email_usuario TEXT UNIQUE NOT NULL,
+        senha_usuario TEXT NOT NULL,
+        data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )";
+
+    if (!$db->exec($sql)) {
+        throw new Exception("Erro ao criar tabela: " . $db->lastErrorMsg());
+    }
+
+    // Verifica se a tabela foi criada
+    $check = $db->querySingle("SELECT name FROM sqlite_master WHERE type='table' AND name='usuario'");
+    if (!$check) {
+        throw new Exception("Falha na verificação da tabela");
+    }
+
+    echo json_encode([
+        'status' => true,
+        'message' => 'Banco de dados e tabela configurados com sucesso!',
+        'db_path' => DB_FILE
+    ]);
+
+} catch (Exception $e) {
+    echo json_encode([
+        'status' => false,
+        'message' => $e->getMessage(),
+        'db_path' => DB_FILE
+    ]);
 }
-
-// Fecha a conexão com o banco de dados (opcional, mas recomendado)
 ?>

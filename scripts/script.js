@@ -145,4 +145,70 @@ function enviarDados() {
     resultadoDiv.style.display = 'block'; // Mostra a div
 }
 
+async function enviarFormulario(event) {
+    event.preventDefault();
+    
+    const formulario = event.target;
+    const formData = new FormData(formulario);
+    const submitBtn = formulario.querySelector('[type="submit"]');
+    const btnOriginalText = submitBtn.innerHTML;
+    
+    // Mostrar loading
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Processando...';
+    
+    try {
+        const response = await fetch(formulario.action, {
+            method: 'POST',
+            body: formData
+        });
+        
+        // Verificar se houve erro HTTP
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Erro ${response.status}: ${errorText || 'Erro no servidor'}`);
+        }
+        
+        // Tentar parsear JSON
+        try {
+            const data = await response.json();
+            
+            if (data.status) {
+                await Swal.fire({
+                    icon: 'success',
+                    title: 'Sucesso!',
+                    text: data.msg,
+                    timer: 2000
+                });
+                window.location.href = "entrar_usuario.php";
+            } else {
+                let errorMsg = data.msg;
+                if (data.errors) {
+                    errorMsg += '\n\n' + Object.values(data.errors).join('\n');
+                }
+                
+                await Swal.fire({
+                    icon: 'error',
+                    title: 'Erro no formulário',
+                    html: errorMsg.replace(/\n/g, '<br>')
+                });
+            }
+        } catch (e) {
+            throw new Error('Resposta inválida do servidor');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        await Swal.fire({
+            icon: 'error',
+            title: 'Erro',
+            text: error.message.includes('Erro 500') ? 
+                  'Erro interno no servidor. Tente novamente mais tarde.' : 
+                  error.message
+        });
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = btnOriginalText;
+    }
+}
+
 
